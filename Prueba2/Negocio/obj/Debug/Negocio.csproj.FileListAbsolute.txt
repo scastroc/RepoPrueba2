@@ -1,0 +1,11 @@
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\obj\Debug\Negocio.csprojAssemblyReference.cache
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\obj\Debug\Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\bin\Debug\Negocio.exe.config
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\bin\Debug\Negocio.exe
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\bin\Debug\Negocio.pdb
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\bin\Debug\Persistencia.exe
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\bin\Debug\Persistencia.pdb
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\bin\Debug\Persistencia.exe.config
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\obj\Debug\Negocio.csproj.CopyComplete
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\obj\Debug\Negocio.exe
+C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Negocio\obj\Debug\Negocio.pdb

@@ -71,12 +71,44 @@
     <Content Include="app\css\responsive.css" />
     <Content Include="app\css\style.css" />
     <Content Include="app\js\menu.js" />
+    <Content Include="app\site\home.aspx" />
+    <Content Include="app\site\listar_empleado.aspx" />
+    <Content Include="app\site\registrar_empleado.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="app\site\home.aspx.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\site\home.aspx.designer.cs">
+      <DependentUpon>home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\site\listar_empleado.aspx.cs">
+      <DependentUpon>listar_empleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\site\listar_empleado.aspx.designer.cs">
+      <DependentUpon>listar_empleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\site\registrar_empleado.aspx.cs">
+      <DependentUpon>registrar_empleado.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\site\registrar_empleado.aspx.designer.cs">
+      <DependentUpon>registrar_empleado.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\site\template\template.Master.cs">
+      <DependentUpon>template.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\site\template\template.Master.designer.cs">
+      <DependentUpon>template.Master</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\site\template\template.Master" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -97,7 +129,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\img\" />
-    <Folder Include="app\site\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
