@@ -1,3 +1,11 @@
+body {
+    background-image: url('../img/background-1866485_1920.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 200px;
+    /*width: auto;*/
+}
+
 .menu {
     position: fixed;
     height: 100%;
@@ -5,7 +13,8 @@
     top: 0;
     left: 0;
     z-index: 1;
-    background-color: #0083CF;
+    /*background-color: #0083CF;*/
+    background: linear-gradient(grey, Black);
     overflow-x: hidden;
     transition: 0.4s;
     padding: 1rem 0;
@@ -66,6 +75,8 @@
 
 .container-title {
     background-color: #0083CF;
+    background: linear-gradient(grey, Black);
+    font-family: 'orange juice 2.0';
     height: 50px;
     margin-top: -25px;
     margin-left: -15px;
@@ -93,4 +104,20 @@
 
 .close {
     display:none;
+}
+
+@font-face {
+    font-family: 'orange juice 2.0';
+    font-weight: bold;
+    src: url('../font/orange juice 2.0.ttf');
+}
+
+@font-face {
+    font-family: 'KGPrimaryItalics';
+    src: url('../font/KGPrimaryItalics.ttf');
+}
+
+@font-face {
+    font-family: 'Beauty in the Ordinary';
+    src: url('../font/Beauty in the Ordinary.ttf');
 }

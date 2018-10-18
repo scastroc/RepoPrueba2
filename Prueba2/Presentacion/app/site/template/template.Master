@@ -21,18 +21,23 @@
 		<div>
 			<a href="#" class="btn-close" onclick="fn_menu_hidden()">&times;</a>
 		</div>
+        <div style="text-align:center; width: 100%; color:white; font-family:'orange juice 2.0'; font-size:30px;">
+            <span>MENÚ</span></>
+        </div>
 
 		<ul>
             <li style="float: left; width: 100%;"><a
 				href="home.aspx"
 				style="width: 100%;"> <i style="float: left;"
-					class="material-icons">list</i><span class="menu-name">Home</span>
+					class="material-icons">home</i><span class="menu-name">Home</span>
 			</a></li>
+            <hr/>
 			<li style="float: left; width: 100%;"><a
 				href="registrar_empleado.aspx"
 				style="width: 100%;"> <i style="float: left;"
-					class="material-icons">list</i><span class="menu-name">Registrar Empleados</span>
+					class="material-icons">person_add</i><span class="menu-name">Registrar Empleados</span>
 			</a></li>
+            <hr/>
 			<li style="float: left; width: 100%;"><a
 				href="listar_empleado.aspx"
 				style="width: 100%;"> <i style="float: left;"
@@ -46,10 +51,10 @@
 		<div id="pnl-title" class="container-title">
 			<a id="btn-menu-open" class="open open-close"
 				href="javascript:void(0)" onclick="fn_menu_show()"> <i
-				class="material-icons">menu</i> Sistema de Registros
+				class="material-icons">menu </i> Supermercado Uno <i class="material-icons" style="font-size:30px;color:red">shopping_cart</i>
 			</a> <a id="btn-menu-close" class="close open-close" href="#"
-				onclick="fn_menu_hidden()"> <i class="material-icons">menu
-					</i>Sistema de Registros
+				onclick="fn_menu_hidden()"> <i class="material-icons">menu </i>
+                Supermercado Uno <i class="material-icons" style="font-size:30px;color:red">shopping_cart</i>
 			</a>
 		</div>
 		<div id="pnl-body" style="max-width:600px;margin:auto;margin-top: 10px;">

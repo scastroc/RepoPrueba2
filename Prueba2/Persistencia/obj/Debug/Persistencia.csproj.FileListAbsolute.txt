@@ -5,3 +5,10 @@ C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\bin\De
 C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\bin\Debug\Persistencia.pdb
 C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\obj\Debug\Persistencia.exe
 C:\Users\Sebastian\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\obj\Debug\Persistencia.pdb
+C:\Users\javiera\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\bin\Debug\Persistencia.exe.config
+C:\Users\javiera\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\bin\Debug\Persistencia.exe
+C:\Users\javiera\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\bin\Debug\Persistencia.pdb
+C:\Users\javiera\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\obj\Debug\Persistencia.csprojAssemblyReference.cache
+C:\Users\javiera\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\obj\Debug\Persistencia.csproj.CoreCompileInputs.cache
+C:\Users\javiera\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\obj\Debug\Persistencia.exe
+C:\Users\javiera\Source\Repos\scastroc\RepoPrueba2\Prueba2\Persistencia\obj\Debug\Persistencia.pdb
