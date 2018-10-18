@@ -1,12 +1,13 @@
 .title {
-	margin-left: 15px;
-	padding-top: 4px;
-	text-transform: uppercase;
-	display: block;
-	-webkit-font-smoothing: antialiased;
-	font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
-	font-size: 22px;
-	padding-bottom: 25px;
+    margin-left: 15px;
+    padding-top: 4px;
+    text-transform: uppercase;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+    font-family: "orange juice 2.0";
+    color: black;
+    font-size: 22px;
+    padding-bottom: 25px;
 }
 
 .row {
