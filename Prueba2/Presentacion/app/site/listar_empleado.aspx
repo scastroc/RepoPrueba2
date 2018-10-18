@@ -14,9 +14,9 @@
                 <asp:BoundField HeaderText="Apellido Materno" DataField="ApellidoMaterno"/>
                 <asp:BoundField HeaderText="Run" DataField="Run"/>
                 <asp:BoundField HeaderText="Tipo Empleado" DataField="TipoEmpleado.Nombre"/>
-                <asp:BoundField HeaderText="Direccion Calle" DataField="Direccion.NombreCalle"/>
+                <%--<asp:BoundField HeaderText="Direccion Calle" DataField="Direccion.NombreCalle"/>
                 <asp:BoundField HeaderText="Numero" DataField="Direccion.Numero"/>
-                <asp:BoundField HeaderText="Comuna" DataField="Direccion.Comuna.Nombre"/>
+                <asp:BoundField HeaderText="Comuna" DataField="Direccion.Comuna.Nombre"/>--%>
                 <asp:BoundField HeaderText="Telefono" DataField="Telefono"/>
                 <asp:BoundField HeaderText="Remuneracion" DataField="Remuneracion"/>
                 <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento"

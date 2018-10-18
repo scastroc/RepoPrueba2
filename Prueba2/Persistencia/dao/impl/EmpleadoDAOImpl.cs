@@ -66,7 +66,8 @@ namespace Persistencia.dao.impl
 
             public void update(EmpleadoEntity empleado)
         {
-            throw new NotImplementedException();
+            adapter.UpdateByRun(empleado.Run, empleado.Nombres, empleado.ApellidoPaterno, empleado.ApellidoMaterno,
+               empleado.TipoEmpleado.Codigo, empleado.Telefono, empleado.Remuneracion, empleado.FechaNacimiento.ToString(), empleado.Run);
         }
     }
 }

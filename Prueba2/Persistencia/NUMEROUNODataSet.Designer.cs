@@ -1438,12 +1438,28 @@ SELECT RUN_DV, NOMBRES, APELLIDO_PAT, APELLIDO_MAT, TIPO_EMPLEADO_ID, TELEFONO, 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[2];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT RUN_DV, NOMBRES, APELLIDO_PAT, APELLIDO_MAT, TIPO_EMPLEADO_ID, TELEFONO, R" +
                 "EMUNERACION_BRUTA, FECHA_NACIMIENTO FROM dbo.EMPLEADO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"UPDATE       EMPLEADO
+SET                RUN_DV = @RUN_DV, NOMBRES = @NOMBRES, APELLIDO_PAT = @APELLIDO_PAT, APELLIDO_MAT = @APELLIDO_MAT, TIPO_EMPLEADO_ID = @TIPO_EMPLEADO_ID, TELEFONO = @TELEFONO, 
+                         REMUNERACION_BRUTA = @REMUNERACION_BRUTA, FECHA_NACIMIENTO = @FECHA_NACIMIENTO
+WHERE        (RUN_DV = @Original_RUN_DV)";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RUN_DV", global::System.Data.SqlDbType.VarChar, 18, global::System.Data.ParameterDirection.Input, 0, 0, "RUN_DV", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@NOMBRES", global::System.Data.SqlDbType.VarChar, 60, global::System.Data.ParameterDirection.Input, 0, 0, "NOMBRES", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@APELLIDO_PAT", global::System.Data.SqlDbType.VarChar, 60, global::System.Data.ParameterDirection.Input, 0, 0, "APELLIDO_PAT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@APELLIDO_MAT", global::System.Data.SqlDbType.VarChar, 60, global::System.Data.ParameterDirection.Input, 0, 0, "APELLIDO_MAT", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TIPO_EMPLEADO_ID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "TIPO_EMPLEADO_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TELEFONO", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 9, 0, "TELEFONO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@REMUNERACION_BRUTA", global::System.Data.SqlDbType.Decimal, 5, global::System.Data.ParameterDirection.Input, 9, 0, "REMUNERACION_BRUTA", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FECHA_NACIMIENTO", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "FECHA_NACIMIENTO", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_RUN_DV", global::System.Data.SqlDbType.VarChar, 18, global::System.Data.ParameterDirection.Input, 0, 0, "RUN_DV", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1769,6 +1785,78 @@ SELECT RUN_DV, NOMBRES, APELLIDO_PAT, APELLIDO_MAT, TIPO_EMPLEADO_ID, TELEFONO, 
         public virtual int Update(string NOMBRES, string APELLIDO_PAT, string APELLIDO_MAT, int TIPO_EMPLEADO_ID, global::System.Nullable<decimal> TELEFONO, global::System.Nullable<decimal> REMUNERACION_BRUTA, global::System.Nullable<global::System.DateTime> FECHA_NACIMIENTO, string Original_RUN_DV, string Original_NOMBRES, string Original_APELLIDO_PAT, string Original_APELLIDO_MAT, int Original_TIPO_EMPLEADO_ID, global::System.Nullable<decimal> Original_TELEFONO, global::System.Nullable<decimal> Original_REMUNERACION_BRUTA, global::System.Nullable<global::System.DateTime> Original_FECHA_NACIMIENTO) {
             return this.Update(Original_RUN_DV, NOMBRES, APELLIDO_PAT, APELLIDO_MAT, TIPO_EMPLEADO_ID, TELEFONO, REMUNERACION_BRUTA, FECHA_NACIMIENTO, Original_RUN_DV, Original_NOMBRES, Original_APELLIDO_PAT, Original_APELLIDO_MAT, Original_TIPO_EMPLEADO_ID, Original_TELEFONO, Original_REMUNERACION_BRUTA, Original_FECHA_NACIMIENTO);
         }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
+        public virtual int UpdateByRun(string RUN_DV, string NOMBRES, string APELLIDO_PAT, string APELLIDO_MAT, int TIPO_EMPLEADO_ID, global::System.Nullable<decimal> TELEFONO, global::System.Nullable<decimal> REMUNERACION_BRUTA, string FECHA_NACIMIENTO, string Original_RUN_DV) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((RUN_DV == null)) {
+                throw new global::System.ArgumentNullException("RUN_DV");
+            }
+            else {
+                command.Parameters[0].Value = ((string)(RUN_DV));
+            }
+            if ((NOMBRES == null)) {
+                throw new global::System.ArgumentNullException("NOMBRES");
+            }
+            else {
+                command.Parameters[1].Value = ((string)(NOMBRES));
+            }
+            if ((APELLIDO_PAT == null)) {
+                throw new global::System.ArgumentNullException("APELLIDO_PAT");
+            }
+            else {
+                command.Parameters[2].Value = ((string)(APELLIDO_PAT));
+            }
+            if ((APELLIDO_MAT == null)) {
+                throw new global::System.ArgumentNullException("APELLIDO_MAT");
+            }
+            else {
+                command.Parameters[3].Value = ((string)(APELLIDO_MAT));
+            }
+            command.Parameters[4].Value = ((int)(TIPO_EMPLEADO_ID));
+            if ((TELEFONO.HasValue == true)) {
+                command.Parameters[5].Value = ((decimal)(TELEFONO.Value));
+            }
+            else {
+                command.Parameters[5].Value = global::System.DBNull.Value;
+            }
+            if ((REMUNERACION_BRUTA.HasValue == true)) {
+                command.Parameters[6].Value = ((decimal)(REMUNERACION_BRUTA.Value));
+            }
+            else {
+                command.Parameters[6].Value = global::System.DBNull.Value;
+            }
+            if ((FECHA_NACIMIENTO == null)) {
+                command.Parameters[7].Value = global::System.DBNull.Value;
+            }
+            else {
+                command.Parameters[7].Value = ((string)(FECHA_NACIMIENTO));
+            }
+            if ((Original_RUN_DV == null)) {
+                throw new global::System.ArgumentNullException("Original_RUN_DV");
+            }
+            else {
+                command.Parameters[8].Value = ((string)(Original_RUN_DV));
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
+        }
     }
     
     /// <summary>
@@ -2051,7 +2139,7 @@ SELECT RUN_DV, NOMBRES, APELLIDO_PAT, APELLIDO_MAT, TIPO_EMPLEADO_ID, TELEFONO, 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string NOMBRE, int codigo) {
+        public virtual int Insert(string NOMBRE) {
             if ((NOMBRE == null)) {
                 throw new global::System.ArgumentNullException("NOMBRE");
             }
