@@ -1,4 +1,6 @@
-﻿using Persistencia.dao.entity;
+﻿using Negocio.business.rules;
+using Negocio.business.rules.impl;
+using Persistencia.dao.entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,98 +12,110 @@ namespace Presentacion.app.site
 {
     public partial class registrar_empleado : System.Web.UI.Page
     {
-        
-        private List<TipoEmpleadoEntity> tipos;
-        private List<EmpleadoEntity> empleados;
+        private static readonly EmpleadoBusiness empleadoBusiness =
+            new EmpleadoBusinessImpl();
+
+        private static readonly TipoEmpleadoBusiness tipoEmpleadoBusiness =
+            new TipoEmpleadoBusinessImpl();
+
+        private List<TipoEmpleadoEntity> tipos;        
 
         
         protected void Page_Load(object sender, EventArgs e)
         {
-
-            crearEmpleados();
+            tipos = tipoEmpleadoBusiness.listTipoEmp();
 
             if (!IsPostBack)
             {
-                cargarTipoEmpleados();
+                cmb_tipo_empleado.DataSource = tipos;
+                cmb_tipo_empleado.DataBind();
 
-
-                EmpleadoEntity updateEmp = (EmpleadoEntity)Session["updateEmp"];
-
-                if (updateEmp != null)
-                {
-                    txt_nombres.Text = updateEmp.Nombres.ToString();
-                    txt_apellidoPaterno.Text = updateEmp.ApellidoPaterno.ToString();
-                    txt_apellidoMaterno.Text = updateEmp.ApellidoMaterno.ToString();
-                    txt_run.Text = updateEmp.Run.ToString();
-                    txt_telefono.Text = updateEmp.Telefono.ToString();
-                    txt_remuneracion.Text = updateEmp.Remuneracion.ToString();
-                    txt_fecha_nacimiento.Text = updateEmp.FechaNacimiento.ToString("yyyy-MM-dd");
-                    txt_fecha_nacimiento.DataBind();
-                    //cmb_tipo_empleado.Text = updateEmp.TipoEmpleadoEntity.Nombre.ToString();
-                    //cmb_tipo_empleado.DataBind();
-                    //cmb_comuna.Text = updateEmp.DireccionEntity.ComunaEntity.Nombre.ToString();
-                    //cmb_comuna.DataBind();
-
-
-                    txt_nombres.Enabled = false;
-                    txt_apellidoPaterno.Enabled = false;
-                    txt_apellidoMaterno.Enabled = false;
-                    txt_run.Enabled = false;
-                    txt_fecha_nacimiento.Enabled = false;
-
-                    lbl_mensaje.Text = "EDITAR DATOS DE EMPLEADO";
-                    lbl_mensaje.CssClass = "skyblue-message";
-
-
-                }
             }
+
+            //crearEmpleados();
+
+            //if (!IsPostBack)
+            //{
+            //    cargarTipoEmpleados();
+
+
+            //    EmpleadoEntity updateEmp = (EmpleadoEntity)Session["updateEmp"];
+
+            //    if (updateEmp != null)
+            //    {
+            //        txt_nombres.Text = updateEmp.Nombres.ToString();
+            //        txt_apellidoPaterno.Text = updateEmp.ApellidoPaterno.ToString();
+            //        txt_apellidoMaterno.Text = updateEmp.ApellidoMaterno.ToString();
+            //        txt_run.Text = updateEmp.Run.ToString();
+            //        txt_telefono.Text = updateEmp.Telefono.ToString();
+            //        txt_remuneracion.Text = updateEmp.Remuneracion.ToString();
+            //        txt_fecha_nacimiento.Text = updateEmp.FechaNacimiento.ToString("yyyy-MM-dd");
+            //        txt_fecha_nacimiento.DataBind();
+            //        //cmb_tipo_empleado.Text = updateEmp.TipoEmpleadoEntity.Nombre.ToString();
+            //        //cmb_tipo_empleado.DataBind();
+            //        //cmb_comuna.Text = updateEmp.DireccionEntity.ComunaEntity.Nombre.ToString();
+            //        //cmb_comuna.DataBind();
+
+
+            //        txt_nombres.Enabled = false;
+            //        txt_apellidoPaterno.Enabled = false;
+            //        txt_apellidoMaterno.Enabled = false;
+            //        txt_run.Enabled = false;
+            //        txt_fecha_nacimiento.Enabled = false;
+
+            //        lbl_mensaje.Text = "EDITAR DATOS DE EMPLEADO";
+            //        lbl_mensaje.CssClass = "skyblue-message";
+
+
+            //    }
+            //}
         }
 
 
-        private void crearEmpleados()
-        {
-            List<EmpleadoEntity> listaEmpleados = (List<EmpleadoEntity>)Session["empleados"];
+        //private void crearEmpleados()
+        //{
+        //    List<EmpleadoEntity> listaEmpleados = (List<EmpleadoEntity>)Session["empleados"];
 
-            if (listaEmpleados != null)
-            {
-                empleados = listaEmpleados;
+        //    if (listaEmpleados != null)
+        //    {
+        //        empleados = listaEmpleados;
 
-            }
-            else
-            {
-                empleados = new List<EmpleadoEntity>();
-            }
-        }
+        //    }
+        //    else
+        //    {
+        //        empleados = new List<EmpleadoEntity>();
+        //    }
+        //}
 
-        private void cargarTipoEmpleados()
-        {
-            TipoEmpleadoEntity jefeTi = new TipoEmpleadoEntity();
-            jefeTi.Codigo = 1;
-            jefeTi.Nombre = "Jefe TI";
+        //private void cargarTipoEmpleados()
+        //{
+        //    TipoEmpleadoEntity jefeTi = new TipoEmpleadoEntity();
+        //    jefeTi.Codigo = 1;
+        //    jefeTi.Nombre = "Jefe TI";
 
-            TipoEmpleadoEntity programador = new TipoEmpleadoEntity();
-            programador.Codigo = 2;
-            programador.Nombre = "Programador";
+        //    TipoEmpleadoEntity programador = new TipoEmpleadoEntity();
+        //    programador.Codigo = 2;
+        //    programador.Nombre = "Programador";
 
-            TipoEmpleadoEntity cajera = new TipoEmpleadoEntity();
-            cajera.Codigo = 3;
-            cajera.Nombre = "Cajera";
+        //    TipoEmpleadoEntity cajera = new TipoEmpleadoEntity();
+        //    cajera.Codigo = 3;
+        //    cajera.Nombre = "Cajera";
 
-            TipoEmpleadoEntity supervisor = new TipoEmpleadoEntity();
-            supervisor.Codigo = 4;
-            supervisor.Nombre = "Supervisor";
+        //    TipoEmpleadoEntity supervisor = new TipoEmpleadoEntity();
+        //    supervisor.Codigo = 4;
+        //    supervisor.Nombre = "Supervisor";
 
-            tipos = new List<TipoEmpleadoEntity>();
-            tipos.Add(jefeTi);
-            tipos.Add(programador);
-            tipos.Add(cajera);
-            tipos.Add(supervisor);
+        //    tipos = new List<TipoEmpleadoEntity>();
+        //    tipos.Add(jefeTi);
+        //    tipos.Add(programador);
+        //    tipos.Add(cajera);
+        //    tipos.Add(supervisor);
 
-            cmb_tipo_empleado.DataSource = tipos;
-            cmb_tipo_empleado.DataBind();
+        //    cmb_tipo_empleado.DataSource = tipos;
+        //    cmb_tipo_empleado.DataBind();
 
-            Session["tipoEmpleados"] = tipos;
-        }
+        //    Session["tipoEmpleados"] = tipos;
+        //}
 
 
 
@@ -117,54 +131,57 @@ namespace Presentacion.app.site
                 nuevoEmpleado.ApellidoPaterno = txt_apellidoPaterno.Text;
                 nuevoEmpleado.ApellidoMaterno = txt_apellidoMaterno.Text;
                 nuevoEmpleado.Run = txt_run.Text;
-
-                TipoEmpleadoEntity tipoEmpSeleccion = ((List<TipoEmpleadoEntity>)Session["tipoEmpleados"]).
-                    FirstOrDefault(
+                TipoEmpleadoEntity tipoEmpSeleccion = tipos.FirstOrDefault(
                     tipos => tipos.Codigo == Int32.Parse(cmb_tipo_empleado.SelectedValue));
                 TipoEmpleadoEntity newTipoEmp = new TipoEmpleadoEntity();
                 newTipoEmp.Nombre = tipoEmpSeleccion.Nombre;
                 newTipoEmp.Codigo = tipoEmpSeleccion.Codigo;
-                nuevoEmpleado.TipoEmpleado = newTipoEmp;
+                nuevoEmpleado.TipoEmpleado = newTipoEmp;                
                 nuevoEmpleado.Telefono = Int32.Parse(txt_telefono.Text);
                 nuevoEmpleado.Remuneracion = Int32.Parse(txt_remuneracion.Text);
                 nuevoEmpleado.FechaNacimiento = DateTime.Parse(txt_fecha_nacimiento.Text);
 
-                List<EmpleadoEntity> listaEmpleados = (List<EmpleadoEntity>)Session["empleados"];
-                EmpleadoEntity updateEmp = (EmpleadoEntity)Session["updateEmp"];
+                empleadoBusiness.create(nuevoEmpleado);
 
-                if (updateEmp == null)
-                {
-                    if (listaEmpleados != null)
-                    {
-                        empleados = listaEmpleados;
-                        empleados.Add(nuevoEmpleado);
-                    }
-                    else
-                    {
-                        empleados = new List<EmpleadoEntity>();
-                        empleados.Add(nuevoEmpleado);
-                    }
-                    lbl_mensaje.Text = "EmpleadoEntity registrado exitosamente.";
-                    lbl_mensaje.CssClass = "green-mesage";
+                lbl_mensaje.Text = "Empleado registrado exitosamente.";
+                lbl_mensaje.CssClass = "green-mesage";
 
-                }
-                else
-                {
-                    //empleados.FirstOrDefault(
-                    //       empleado => empleado.Nombres == nuevoEmpleado.Nombres).TipoEmpleadoEntity = nuevoEmpleado.TipoEmpleadoEntity;
-                    empleados.FirstOrDefault(
-                        empleado => empleado.Nombres == nuevoEmpleado.Nombres).Remuneracion = nuevoEmpleado.Remuneracion;
-                    empleados.FirstOrDefault(
-                        empleado => empleado.Nombres == nuevoEmpleado.Nombres).Telefono = nuevoEmpleado.Telefono;
+                //List<EmpleadoEntity> listaEmpleados = (List<EmpleadoEntity>)Session["empleados"];
+                //EmpleadoEntity updateEmp = (EmpleadoEntity)Session["updateEmp"];
 
-                    lbl_mensaje.Text = "Información actualizada";
+                //if (updateEmp == null)
+                //{
+                //    if (listaEmpleados != null)
+                //    {
+                //        empleados = listaEmpleados;
+                //        empleados.Add(nuevoEmpleado);
+                //    }
+                //    else
+                //    {
+                //        empleados = new List<EmpleadoEntity>();
+                //        empleados.Add(nuevoEmpleado);
+                //    }
+                //    lbl_mensaje.Text = "EmpleadoEntity registrado exitosamente.";
+                //    lbl_mensaje.CssClass = "green-mesage";
 
-                    Session["updateEmpleado"] = null;
-                    //Habilitando nombre
-                    txt_nombres.Enabled = true;
-                }
+                //}
+                //else
+                //{
+                //    //empleados.FirstOrDefault(
+                //    //       empleado => empleado.Nombres == nuevoEmpleado.Nombres).TipoEmpleadoEntity = nuevoEmpleado.TipoEmpleadoEntity;
+                //    empleados.FirstOrDefault(
+                //        empleado => empleado.Nombres == nuevoEmpleado.Nombres).Remuneracion = nuevoEmpleado.Remuneracion;
+                //    empleados.FirstOrDefault(
+                //        empleado => empleado.Nombres == nuevoEmpleado.Nombres).Telefono = nuevoEmpleado.Telefono;
 
-                Session["empleados"] = empleados;
+                //    lbl_mensaje.Text = "Información actualizada";
+
+                //    Session["updateEmpleado"] = null;
+                //    //Habilitando nombre
+                //    txt_nombres.Enabled = true;
+                //}
+
+                //Session["empleados"] = empleados;
 
             }
             catch (Exception ex)
