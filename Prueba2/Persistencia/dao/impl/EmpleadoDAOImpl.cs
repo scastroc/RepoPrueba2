@@ -91,6 +91,8 @@ namespace Persistencia.dao.impl
             }
         }
 
+        
+
         public void update(EmpleadoEntity empleado)
         {
             adapter.UpdateByRun(empleado.Run, empleado.Nombres, empleado.ApellidoPaterno, empleado.ApellidoMaterno,
