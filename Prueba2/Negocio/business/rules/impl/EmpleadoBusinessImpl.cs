@@ -24,6 +24,11 @@ namespace Negocio.business.rules.impl
             dao.delete(empleado);
         }
 
+        public List<EmpleadoEntity> findByFechaNacimiento(string init, string end)
+        {
+            return dao.findByFechaNacimiento(init, end);
+        }
+
         public List<EmpleadoEntity> listEmpleado()
         {
             return dao.findAll();

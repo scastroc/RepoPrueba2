@@ -16,5 +16,7 @@ namespace Negocio.business.rules
         void delete(EmpleadoEntity empleado);
 
         List<EmpleadoEntity> listEmpleado();
+
+        List<EmpleadoEntity> findByFechaNacimiento(string init, string end);
     }
 }

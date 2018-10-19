@@ -60,7 +60,38 @@ namespace Persistencia.dao.impl
             }
         }
 
-            public void update(EmpleadoEntity empleado)
+        public List<EmpleadoEntity> findByFechaNacimiento(string init, string end)
+        {
+            List<EmpleadoEntity> empleados =
+                new List<EmpleadoEntity>();
+
+            //TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+
+            foreach (NUMEROUNODataSet.EMPLEADORow row
+                in adapter.FindByFechaNacimiento(init, end).Rows)
+            {
+
+
+                EmpleadoEntity empleado = new EmpleadoEntity();
+                empleado.Run = row.RUN_DV;
+                empleado.Nombres = row.NOMBRES;
+                empleado.ApellidoPaterno = row.APELLIDO_PAT;
+                empleado.ApellidoMaterno = row.APELLIDO_MAT;
+                TipoEmpleadoEntity tipoEmp = new TipoEmpleadoEntity();
+                tipoEmp.Codigo = row.TIPO_EMPLEADO_ID;
+                empleado.TipoEmpleado = tipoEmp;
+                empleado.Telefono = Int32.Parse(row.TELEFONO.ToString());
+                empleado.Remuneracion = Int32.Parse(row.REMUNERACION_BRUTA.ToString());
+                empleado.FechaNacimiento = row.FECHA_NACIMIENTO;
+
+                empleados.Add(empleado);
+            }
+            {
+                return empleados;
+            }
+        }
+
+        public void update(EmpleadoEntity empleado)
         {
             adapter.UpdateByRun(empleado.Run, empleado.Nombres, empleado.ApellidoPaterno, empleado.ApellidoMaterno,
                empleado.TipoEmpleado.Codigo, empleado.Telefono, empleado.Remuneracion, empleado.FechaNacimiento.ToString(), empleado.Run);

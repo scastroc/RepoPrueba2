@@ -16,5 +16,7 @@ namespace Persistencia.dao
         void delete(EmpleadoEntity empleado);
 
         List<EmpleadoEntity> findAll();
+
+        List<EmpleadoEntity> findByFechaNacimiento(string init, string end);
     }
 }
