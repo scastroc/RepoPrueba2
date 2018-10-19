@@ -4,8 +4,12 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="content" runat="server">
     <img src="../img/dibujo.png" 
          style="background-repeat: no-repeat;
-                background-attachment: fixed;
-                margin-left: -250px;
-                width: 900px;
-                position: static;"/>
+    background-attachment: fixed;
+    margin-left: -150px;
+    width: 750px;
+    position: static;
+    border: 30px solid rgba(243, 0, 0, 0.3);
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;"/>
 </asp:Content>
