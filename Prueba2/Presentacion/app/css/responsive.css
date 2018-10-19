@@ -96,7 +96,7 @@
 }
 
 .row table tbody tr th {
-    color: white;
+    color: black;
     background-color: #0083CF;
     border: 1px solid #0083CF;
     -webkit-font-smoothing: antialiased;
@@ -104,19 +104,19 @@
     font-size: 18px;
 }
 
-.row table tbody tr td {
-    color: #0083CF;
-    border: 1px solid #0083CF;
-    margin-left: 15px;
-    padding-top: 4px;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-    font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
-    font-size: 12px;
-    padding-top: 4px;
-    text-transform: uppercase;
-    -webkit-font-smoothing: antialiased;
-}
+    .row table tbody tr td {
+        color: #000000;
+        border: 1px solid #000000;
+        margin-left: 15px;
+        padding-top: 4px;
+        text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+        font-family: "Roboto", "Helvetica Neue", Arial, sans-serif;
+        font-size: 12px;
+        padding-top: 4px;
+        text-transform: uppercase;
+        -webkit-font-smoothing: antialiased;
+    }
 
 .btn-delete a {
     border-radius: 4px;
