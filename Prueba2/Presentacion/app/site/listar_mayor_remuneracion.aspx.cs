@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Presentacion.app.site
 {
-    public partial class listar_empleado : System.Web.UI.Page
+    public partial class listar_mayor_remuneracion : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {

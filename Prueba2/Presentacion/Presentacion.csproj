@@ -74,7 +74,10 @@
     <Content Include="app\img\dibujo.png" />
     <Content Include="app\js\menu.js" />
     <Content Include="app\site\home.aspx" />
-    <Content Include="app\site\listar_empleado.aspx" />
+    <Content Include="app\site\listar_mayor_remuneracion.aspx" />
+    <Content Include="app\site\listar_por_fecha.aspx" />
+    <Content Include="app\site\listar_por_remuneracion.aspx" />
+    <Content Include="app\site\listar_todos.aspx" />
     <Content Include="app\site\registrar_empleado.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -86,12 +89,33 @@
     <Compile Include="app\site\home.aspx.designer.cs">
       <DependentUpon>home.aspx</DependentUpon>
     </Compile>
-    <Compile Include="app\site\listar_empleado.aspx.cs">
-      <DependentUpon>listar_empleado.aspx</DependentUpon>
+    <Compile Include="app\site\listar_mayor_remuneracion.aspx.cs">
+      <DependentUpon>listar_mayor_remuneracion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="app\site\listar_empleado.aspx.designer.cs">
-      <DependentUpon>listar_empleado.aspx</DependentUpon>
+    <Compile Include="app\site\listar_mayor_remuneracion.aspx.designer.cs">
+      <DependentUpon>listar_mayor_remuneracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\site\listar_por_fecha.aspx.cs">
+      <DependentUpon>listar_por_fecha.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\site\listar_por_fecha.aspx.designer.cs">
+      <DependentUpon>listar_por_fecha.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\site\listar_por_remuneracion.aspx.cs">
+      <DependentUpon>listar_por_remuneracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\site\listar_por_remuneracion.aspx.designer.cs">
+      <DependentUpon>listar_por_remuneracion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="app\site\listar_todos.aspx.cs">
+      <DependentUpon>listar_todos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="app\site\listar_todos.aspx.designer.cs">
+      <DependentUpon>listar_todos.aspx</DependentUpon>
     </Compile>
     <Compile Include="app\site\registrar_empleado.aspx.cs">
       <DependentUpon>registrar_empleado.aspx</DependentUpon>

@@ -39,10 +39,28 @@
 			</a></li>
             <hr/>
 			<li style="float: left; width: 100%;"><a
-				href="listar_empleado.aspx"
+				href="listar_todos.aspx"
 				style="width: 100%;"> <i style="float: left;"
 					class="material-icons">list</i><span class="menu-name">Listar Empleados</span>
-			</a></li>            
+			</a></li>
+            <hr/>
+			<li style="float: left; width: 100%;"><a
+				href="listar_por_remuneracion.aspx"
+				style="width: 100%;"> <i style="float: left;"
+					class="material-icons">list</i><span class="menu-name">Listar por Remuneracion</span>
+			</a></li>
+            <hr/>
+			<li style="float: left; width: 100%;"><a
+				href="listar_por_fecha.aspx"
+				style="width: 100%;"> <i style="float: left;"
+					class="material-icons">list</i><span class="menu-name">Listar por Fechas</span>
+			</a></li>
+            <hr/>
+			<li style="float: left; width: 100%;"><a
+				href="listar_mayor_remuneracion.aspx"
+				style="width: 100%;"> <i style="float: left;"
+					class="material-icons">list</i><span class="menu-name">Listar Mayor Renta</span>
+			</a></li>
 		</ul>
 
 	</div>
