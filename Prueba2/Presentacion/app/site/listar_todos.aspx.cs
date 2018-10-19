@@ -18,41 +18,21 @@ namespace Presentacion.app.site
         private static readonly TipoEmpleadoBusiness tipoEmpleadoBusiness =
             new TipoEmpleadoBusinessImpl();
 
-        private List<EmpleadoEntity> empleados;
+        private List<EmpleadoEntity> empleados = empleadoBusiness.listEmpleado();
 
         //private List<TipoEmpleadoEntity> tipos;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-           
-            cargaListaEmpleados();
-            if (!IsPostBack)
-            {
-                refrescarTabla();
-            }
-
-        }
+            
+              }
 
         private void refrescarTabla()
         {
             tbl_empleados.DataSource = empleados;
             tbl_empleados.DataBind();
         }
-
-        private void cargaListaEmpleados()
-        {
-            List<EmpleadoEntity> listaEmpleados = empleadoBusiness.listEmpleado();
-
-            if (listaEmpleados == null || listaEmpleados.Count == 0)
-            {
-                empleados = new List<EmpleadoEntity>();
-            }
-            else
-            {
-                empleados = listaEmpleados;
-
-            }
-        }
+       
 
         protected void tbl_empleados_RowEditing(object sender, GridViewEditEventArgs e)
         {
@@ -62,6 +42,11 @@ namespace Presentacion.app.site
         protected void tbl_empleados_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
+        }
+
+        protected void btn_listar_todos_Click(object sender, EventArgs e)
+        {
+            refrescarTabla();
         }
     }
 }

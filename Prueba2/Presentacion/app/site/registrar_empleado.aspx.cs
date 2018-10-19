@@ -32,43 +32,7 @@ namespace Presentacion.app.site
 
             }
 
-            //crearEmpleados();
-
-            //if (!IsPostBack)
-            //{
-            //    cargarTipoEmpleados();
-
-
-            //    EmpleadoEntity updateEmp = (EmpleadoEntity)Session["updateEmp"];
-
-            //    if (updateEmp != null)
-            //    {
-            //        txt_nombres.Text = updateEmp.Nombres.ToString();
-            //        txt_apellidoPaterno.Text = updateEmp.ApellidoPaterno.ToString();
-            //        txt_apellidoMaterno.Text = updateEmp.ApellidoMaterno.ToString();
-            //        txt_run.Text = updateEmp.Run.ToString();
-            //        txt_telefono.Text = updateEmp.Telefono.ToString();
-            //        txt_remuneracion.Text = updateEmp.Remuneracion.ToString();
-            //        txt_fecha_nacimiento.Text = updateEmp.FechaNacimiento.ToString("yyyy-MM-dd");
-            //        txt_fecha_nacimiento.DataBind();
-            //        //cmb_tipo_empleado.Text = updateEmp.TipoEmpleadoEntity.Nombre.ToString();
-            //        //cmb_tipo_empleado.DataBind();
-            //        //cmb_comuna.Text = updateEmp.DireccionEntity.ComunaEntity.Nombre.ToString();
-            //        //cmb_comuna.DataBind();
-
-
-            //        txt_nombres.Enabled = false;
-            //        txt_apellidoPaterno.Enabled = false;
-            //        txt_apellidoMaterno.Enabled = false;
-            //        txt_run.Enabled = false;
-            //        txt_fecha_nacimiento.Enabled = false;
-
-            //        lbl_mensaje.Text = "EDITAR DATOS DE EMPLEADO";
-            //        lbl_mensaje.CssClass = "skyblue-message";
-
-
-            //    }
-            //}
+            
         }
 
 
@@ -144,44 +108,7 @@ namespace Presentacion.app.site
                 empleadoBusiness.create(nuevoEmpleado);
 
                 lbl_mensaje.Text = "Empleado registrado exitosamente.";
-                lbl_mensaje.CssClass = "green-mesage";
-
-                //List<EmpleadoEntity> listaEmpleados = (List<EmpleadoEntity>)Session["empleados"];
-                //EmpleadoEntity updateEmp = (EmpleadoEntity)Session["updateEmp"];
-
-                //if (updateEmp == null)
-                //{
-                //    if (listaEmpleados != null)
-                //    {
-                //        empleados = listaEmpleados;
-                //        empleados.Add(nuevoEmpleado);
-                //    }
-                //    else
-                //    {
-                //        empleados = new List<EmpleadoEntity>();
-                //        empleados.Add(nuevoEmpleado);
-                //    }
-                //    lbl_mensaje.Text = "EmpleadoEntity registrado exitosamente.";
-                //    lbl_mensaje.CssClass = "green-mesage";
-
-                //}
-                //else
-                //{
-                //    //empleados.FirstOrDefault(
-                //    //       empleado => empleado.Nombres == nuevoEmpleado.Nombres).TipoEmpleadoEntity = nuevoEmpleado.TipoEmpleadoEntity;
-                //    empleados.FirstOrDefault(
-                //        empleado => empleado.Nombres == nuevoEmpleado.Nombres).Remuneracion = nuevoEmpleado.Remuneracion;
-                //    empleados.FirstOrDefault(
-                //        empleado => empleado.Nombres == nuevoEmpleado.Nombres).Telefono = nuevoEmpleado.Telefono;
-
-                //    lbl_mensaje.Text = "Información actualizada";
-
-                //    Session["updateEmpleado"] = null;
-                //    //Habilitando nombre
-                //    txt_nombres.Enabled = true;
-                //}
-
-                //Session["empleados"] = empleados;
+                lbl_mensaje.CssClass = "green-mesage";                
 
             }
             catch (Exception ex)
@@ -236,6 +163,7 @@ namespace Presentacion.app.site
                 error = error + "<p>- Debe ingresar información en campo Fecha </p>";
             }
             else if (DateTime.Parse("01-01-2000").CompareTo(DateTime.Parse(txt_fecha_nacimiento.Text)) < 0)
+            //else if (DateTime.Today.CompareTo(DateTime.Parse(txt_fecha_nacimiento.Text)) < 0)
             {
                 error = error + "<p>- El nuevo empleado debe ser mayor de edad</p>";
             }

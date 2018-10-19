@@ -34,7 +34,7 @@ namespace Persistencia.dao.impl
             List<EmpleadoEntity> empleados =
                 new List<EmpleadoEntity>();
 
-            TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+            //TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
 
             foreach (NUMEROUNODataSet.EMPLEADORow row
                 in adapter.GetData().Rows)
@@ -53,6 +53,7 @@ namespace Persistencia.dao.impl
                 empleado.Remuneracion = Int32.Parse(row.REMUNERACION_BRUTA.ToString());
                 empleado.FechaNacimiento = row.FECHA_NACIMIENTO;
 
+                empleados.Add(empleado);
             }
             {
                 return empleados;
