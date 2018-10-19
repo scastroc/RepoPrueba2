@@ -39,21 +39,16 @@ namespace Persistencia.dao.impl
             foreach (NUMEROUNODataSet.EMPLEADORow row
                 in adapter.GetData().Rows)
             {
-                //ComunaEntity comuna = new
-                //   ComunaEntity();
-                //comuna.Codigo = row.codigo;
-                //comuna.Nombre = row.nombre;
-                //comuna.Region = daoR.findByCodigo(
-                //    row.cod_region);
-                ////Agregar comuna a lista de comunas
-                //comunas.Add(comuna);
+                
 
                 EmpleadoEntity empleado = new EmpleadoEntity();
                 empleado.Run = row.RUN_DV;
                 empleado.Nombres = row.NOMBRES;
                 empleado.ApellidoPaterno = row.APELLIDO_PAT;
                 empleado.ApellidoMaterno = row.APELLIDO_MAT;
-                empleado.TipoEmpleado.Codigo = row.TIPO_EMPLEADO_ID;
+                TipoEmpleadoEntity tipoEmp = new TipoEmpleadoEntity();
+                tipoEmp.Codigo = row.TIPO_EMPLEADO_ID;
+                empleado.TipoEmpleado = tipoEmp;
                 empleado.Telefono = Int32.Parse(row.TELEFONO.ToString());
                 empleado.Remuneracion = Int32.Parse(row.REMUNERACION_BRUTA.ToString());
                 empleado.FechaNacimiento = row.FECHA_NACIMIENTO;
