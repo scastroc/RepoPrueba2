@@ -18,5 +18,9 @@ namespace Negocio.business.rules
         List<EmpleadoEntity> listEmpleado();
 
         List<EmpleadoEntity> findByFechaNacimiento(string init, string end);
+
+        List<EmpleadoEntity> findByRemuneracion(int init, int end);
+
+        List<EmpleadoEntity> listMaxRemu();
     }
 }

@@ -44,7 +44,7 @@
                 <asp:BoundField HeaderText="Nombres" DataField="Nombres" ReadOnly="true" />
                 <asp:BoundField HeaderText="Apellido Paterno" DataField="ApellidoPaterno" ReadOnly="true" />
                 <asp:BoundField HeaderText="Apellido Materno" DataField="ApellidoMaterno" ReadOnly="true" />
-                <asp:BoundField HeaderText="Tipo Empleado" DataField="TipoEmpleado.Codigo" ReadOnly="true" />                
+                <asp:BoundField HeaderText="Tipo Empleado" DataField="TipoEmpleado.Nombre" ReadOnly="true" />                
                 <asp:BoundField HeaderText="Telefono" DataField="Telefono" ReadOnly="true" />
                 <asp:BoundField HeaderText="Remuneracion" DataField="Remuneracion" ReadOnly="true" />
                 <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento"

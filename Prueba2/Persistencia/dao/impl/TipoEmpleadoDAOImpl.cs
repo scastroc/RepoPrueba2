@@ -19,7 +19,7 @@ namespace Persistencia.dao.impl
 
         public void create(TipoEmpleadoEntity tipoEmpleado)
         {
-            adapter.Insert(tipoEmpleado.Nombre, tipoEmpleado.Codigo);
+            adapter.Insert(tipoEmpleado.Nombre);
         }
 
         public void delete(TipoEmpleadoEntity tipoEmpleado)

@@ -26,7 +26,8 @@ namespace Persistencia.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=JAVIERA-PC;Initial Catalog=NUMEROUNO;Integrated Security=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=localhost\\SQLEXPRESS;Initial Catalog=NUMEROUNO;Integrated Security=Tr" +
+            "ue")]
         public string NUMEROUNOConnectionString {
             get {
                 return ((string)(this["NUMEROUNOConnectionString"]));

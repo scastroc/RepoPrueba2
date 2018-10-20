@@ -22,15 +22,16 @@ namespace Presentacion.app.site
 
         }
 
-        private void refrescarTabla(decimal init, decimal end)
+        private void refrescarTabla(int init, int end)
         {
-            throw new NotImplementedException();
+            tbl_empleados.DataSource = empleadoBusiness.findByRemuneracion(init, end);
+            tbl_empleados.DataBind();
         }
 
         protected void btn_buscar_Click(object sender, EventArgs e)
         {
-            decimal init = Decimal.Parse(txt_remuneracion_init.Text);
-            decimal end = Decimal.Parse(txt_remuneracion_end.Text);
+            int init = Int32.Parse(txt_remuneracion_init.Text);
+            int end = Int32.Parse(txt_remuneracion_end.Text);
 
             refrescarTabla(init, end);
         }

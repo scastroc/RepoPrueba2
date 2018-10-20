@@ -13,11 +13,15 @@ namespace Persistencia.dao
 
         void update(EmpleadoEntity empleado);
 
-        void delete(EmpleadoEntity empleado);
+        void delete(EmpleadoEntity empleado);        
 
         List<EmpleadoEntity> findAll();
 
         List<EmpleadoEntity> findByFechaNacimiento(string init, string end);
+
+        List<EmpleadoEntity> findByRemuneracion(int init, int end);
+
+        List<EmpleadoEntity> listMaxRemu();
 
     }
 }

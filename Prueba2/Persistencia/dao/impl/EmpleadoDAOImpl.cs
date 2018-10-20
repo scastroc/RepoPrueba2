@@ -25,8 +25,9 @@ namespace Persistencia.dao.impl
 
         public void delete(EmpleadoEntity empleado)
         {
-            adapter.Delete(empleado.Run, empleado.Nombres, empleado.ApellidoPaterno, empleado.ApellidoMaterno,
-               empleado.TipoEmpleado.Codigo, empleado.Telefono, empleado.Remuneracion, empleado.FechaNacimiento);
+            adapter.DeleteByRun(empleado.Run);
+        //    adapter.Delete(empleado.Run, empleado.Nombres, empleado.ApellidoPaterno, empleado.ApellidoMaterno,
+        //       empleado.TipoEmpleado.Codigo, empleado.Telefono, empleado.Remuneracion, empleado.FechaNacimiento);
         }
 
         public List<EmpleadoEntity> findAll()
@@ -34,7 +35,8 @@ namespace Persistencia.dao.impl
             List<EmpleadoEntity> empleados =
                 new List<EmpleadoEntity>();
 
-            //TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+            TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+            List<TipoEmpleadoEntity> tipos = daoTipo.findAll();
 
             foreach (NUMEROUNODataSet.EMPLEADORow row
                 in adapter.GetData().Rows)
@@ -45,10 +47,9 @@ namespace Persistencia.dao.impl
                 empleado.Run = row.RUN_DV;
                 empleado.Nombres = row.NOMBRES;
                 empleado.ApellidoPaterno = row.APELLIDO_PAT;
-                empleado.ApellidoMaterno = row.APELLIDO_MAT;
-                TipoEmpleadoEntity tipoEmp = new TipoEmpleadoEntity();
-                tipoEmp.Codigo = row.TIPO_EMPLEADO_ID;
-                empleado.TipoEmpleado = tipoEmp;
+                empleado.ApellidoMaterno = row.APELLIDO_MAT;                
+                empleado.TipoEmpleado = tipos.FirstOrDefault(
+                    tipo => tipo.Codigo == row.TIPO_EMPLEADO_ID);                
                 empleado.Telefono = Int32.Parse(row.TELEFONO.ToString());
                 empleado.Remuneracion = Int32.Parse(row.REMUNERACION_BRUTA.ToString());
                 empleado.FechaNacimiento = row.FECHA_NACIMIENTO;
@@ -65,7 +66,8 @@ namespace Persistencia.dao.impl
             List<EmpleadoEntity> empleados =
                 new List<EmpleadoEntity>();
 
-            //TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+            TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+            List<TipoEmpleadoEntity> tipos = daoTipo.findAll();
 
             foreach (NUMEROUNODataSet.EMPLEADORow row
                 in adapter.FindByFechaNacimiento(init, end).Rows)
@@ -77,9 +79,8 @@ namespace Persistencia.dao.impl
                 empleado.Nombres = row.NOMBRES;
                 empleado.ApellidoPaterno = row.APELLIDO_PAT;
                 empleado.ApellidoMaterno = row.APELLIDO_MAT;
-                TipoEmpleadoEntity tipoEmp = new TipoEmpleadoEntity();
-                tipoEmp.Codigo = row.TIPO_EMPLEADO_ID;
-                empleado.TipoEmpleado = tipoEmp;
+                empleado.TipoEmpleado = tipos.FirstOrDefault(
+                    tipo => tipo.Codigo == row.TIPO_EMPLEADO_ID);
                 empleado.Telefono = Int32.Parse(row.TELEFONO.ToString());
                 empleado.Remuneracion = Int32.Parse(row.REMUNERACION_BRUTA.ToString());
                 empleado.FechaNacimiento = row.FECHA_NACIMIENTO;
@@ -91,12 +92,70 @@ namespace Persistencia.dao.impl
             }
         }
 
-        
+        public List<EmpleadoEntity> findByRemuneracion(int init, int end)
+        {
+            List<EmpleadoEntity> empleados =
+                new List<EmpleadoEntity>();
+
+            TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+            List<TipoEmpleadoEntity> tipos = daoTipo.findAll();
+
+            foreach (NUMEROUNODataSet.EMPLEADORow row
+                in adapter.GetByRemuneracion(init, end).Rows)
+            {
+
+                EmpleadoEntity empleado = new EmpleadoEntity();
+                empleado.Run = row.RUN_DV;
+                empleado.Nombres = row.NOMBRES;
+                empleado.ApellidoPaterno = row.APELLIDO_PAT;
+                empleado.ApellidoMaterno = row.APELLIDO_MAT;
+                empleado.TipoEmpleado = tipos.FirstOrDefault(
+                    tipo => tipo.Codigo == row.TIPO_EMPLEADO_ID);
+                empleado.Telefono = Int32.Parse(row.TELEFONO.ToString());
+                empleado.Remuneracion = Int32.Parse(row.REMUNERACION_BRUTA.ToString());
+                empleado.FechaNacimiento = row.FECHA_NACIMIENTO;
+
+                empleados.Add(empleado);
+            }
+            {
+                return empleados;
+            }
+        }
+
+        public List<EmpleadoEntity> listMaxRemu()
+        {
+            List<EmpleadoEntity> empleados =
+                new List<EmpleadoEntity>();
+
+            TipoEmpleadoDAO daoTipo = new TipoEmpleadoDAOImpl();
+            List<TipoEmpleadoEntity> tipos = daoTipo.findAll();
+
+            foreach (NUMEROUNODataSet.EMPLEADORow row
+                in adapter.GetMaxRemuneracion().Rows)
+            {
+
+                EmpleadoEntity empleado = new EmpleadoEntity();
+                empleado.Run = row.RUN_DV;
+                empleado.Nombres = row.NOMBRES;
+                empleado.ApellidoPaterno = row.APELLIDO_PAT;
+                empleado.ApellidoMaterno = row.APELLIDO_MAT;
+                empleado.TipoEmpleado = tipos.FirstOrDefault(
+                    tipo => tipo.Codigo == row.TIPO_EMPLEADO_ID);
+                empleado.Telefono = Int32.Parse(row.TELEFONO.ToString());
+                empleado.Remuneracion = Int32.Parse(row.REMUNERACION_BRUTA.ToString());
+                empleado.FechaNacimiento = row.FECHA_NACIMIENTO;
+
+                empleados.Add(empleado);
+            }
+            {
+                return empleados;
+            }
+
+        }
 
         public void update(EmpleadoEntity empleado)
         {
-            adapter.UpdateByRun(empleado.Run, empleado.Nombres, empleado.ApellidoPaterno, empleado.ApellidoMaterno,
-               empleado.TipoEmpleado.Codigo, empleado.Telefono, empleado.Remuneracion, empleado.FechaNacimiento.ToString(), empleado.Run);
+            adapter.UpdateByRun(empleado.TipoEmpleado.Codigo, empleado.Telefono, empleado.Remuneracion, empleado.Run);
         }
     }
 }

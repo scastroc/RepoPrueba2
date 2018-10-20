@@ -29,9 +29,19 @@ namespace Negocio.business.rules.impl
             return dao.findByFechaNacimiento(init, end);
         }
 
+        public List<EmpleadoEntity> findByRemuneracion(int init, int end)
+        {
+            return dao.findByRemuneracion(init, end);
+        }
+
         public List<EmpleadoEntity> listEmpleado()
         {
             return dao.findAll();
+        }
+
+        public List<EmpleadoEntity> listMaxRemu()
+        {
+            return dao.listMaxRemu();
         }
 
         public void update(EmpleadoEntity empleado)

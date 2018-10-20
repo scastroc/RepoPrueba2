@@ -16,13 +16,15 @@
         <asp:GridView ID="tbl_empleados" runat="server"            
             OnRowEditing ="tbl_empleados_RowEditing"
             OnRowDeleting="tbl_empleados_RowDeleting"
+            OnRowUpdating="tbl_empleados_RowUpdating"
+            OnRowCancelingEdit="tbl_empleados_RowCancelingEdit"
             AutoGenerateColumns="false">
             <Columns>
                 <asp:BoundField HeaderText="Run" DataField="Run" ReadOnly="true" />
                 <asp:BoundField HeaderText="Nombres" DataField="Nombres" ReadOnly="true" />
                 <asp:BoundField HeaderText="Apellido Paterno" DataField="ApellidoPaterno" ReadOnly="true" />
                 <asp:BoundField HeaderText="Apellido Materno" DataField="ApellidoMaterno" ReadOnly="true" />
-                <asp:BoundField HeaderText="Tipo Empleado" DataField="TipoEmpleado.Codigo" ReadOnly="true" />                
+                <asp:BoundField HeaderText="Tipo Empleado" DataField="TipoEmpleado.Nombre" ReadOnly="true" />                
                 <asp:BoundField HeaderText="Telefono" DataField="Telefono" ReadOnly="true" />
                 <asp:BoundField HeaderText="Remuneracion" DataField="Remuneracion" ReadOnly="true" />
                 <asp:BoundField HeaderText="Fecha de Nacimiento" DataField="FechaNacimiento"

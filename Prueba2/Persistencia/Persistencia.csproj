@@ -49,6 +49,9 @@
     <Compile Include="dao\impl\EmpleadoDAOImpl.cs" />
     <Compile Include="dao\impl\TipoEmpleadoDAOImpl.cs" />
     <Compile Include="dao\TipoEmpleadoDAO.cs" />
+    <Compile Include="NUMEROUNODataSet.cs">
+      <DependentUpon>NUMEROUNODataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="NUMEROUNODataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
